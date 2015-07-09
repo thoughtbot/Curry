@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F88630761B4EF9B200F53969 /* Curry.h in Headers */ = {isa = PBXBuildFile; fileRef = F88630741B4EF9B200F53969 /* Curry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F88630961B4EFA2700F53969 /* Curry.h in Headers */ = {isa = PBXBuildFile; fileRef = F88630741B4EF9B200F53969 /* Curry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F886309A1B4EFD7600F53969 /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88630991B4EFD7600F53969 /* Curry.swift */; };
+		F886309B1B4EFD7600F53969 /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88630991B4EFD7600F53969 /* Curry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +18,7 @@
 		F88630741B4EF9B200F53969 /* Curry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Curry.h; sourceTree = "<group>"; };
 		F88630751B4EF9B200F53969 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F886307D1B4EF9F800F53969 /* Curry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Curry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F88630991B4EFD7600F53969 /* Curry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Curry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 		F88630721B4EF9B200F53969 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				F88630991B4EFD7600F53969 /* Curry.swift */,
 				F88630731B4EF9B200F53969 /* Resources */,
 			);
 			path = Source;
@@ -185,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F886309A1B4EFD7600F53969 /* Curry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F886309B1B4EFD7600F53969 /* Curry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
