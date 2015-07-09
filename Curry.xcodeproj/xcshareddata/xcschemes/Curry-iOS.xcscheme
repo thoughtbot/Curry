@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F88630551B4EF96200F53969"
-               BuildableName = "Curry-iOS.framework"
+               BuildableName = "Curry.framework"
                BlueprintName = "Curry-iOS"
                ReferencedContainer = "container:Curry.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F88630551B4EF96200F53969"
-            BuildableName = "Curry-iOS.framework"
+            BuildableName = "Curry.framework"
             BlueprintName = "Curry-iOS"
             ReferencedContainer = "container:Curry.xcodeproj">
          </BuildableReference>
@@ -61,7 +61,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F88630551B4EF96200F53969"
-            BuildableName = "Curry-iOS.framework"
+            BuildableName = "Curry.framework"
             BlueprintName = "Curry-iOS"
             ReferencedContainer = "container:Curry.xcodeproj">
          </BuildableReference>

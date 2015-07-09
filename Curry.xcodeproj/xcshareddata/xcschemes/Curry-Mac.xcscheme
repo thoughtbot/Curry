@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F886307C1B4EF9F800F53969"
-               BuildableName = "Curry-Mac.framework"
+               BuildableName = "Curry.framework"
                BlueprintName = "Curry-Mac"
                ReferencedContainer = "container:Curry.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F886307C1B4EF9F800F53969"
-            BuildableName = "Curry-Mac.framework"
+            BuildableName = "Curry.framework"
             BlueprintName = "Curry-Mac"
             ReferencedContainer = "container:Curry.xcodeproj">
          </BuildableReference>
@@ -61,7 +61,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F886307C1B4EF9F800F53969"
-            BuildableName = "Curry-Mac.framework"
+            BuildableName = "Curry.framework"
             BlueprintName = "Curry-Mac"
             ReferencedContainer = "container:Curry.xcodeproj">
          </BuildableReference>
