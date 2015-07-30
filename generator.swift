@@ -5,7 +5,8 @@ import Foundation
 let generics = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "AA"]
 
 // Set the threshold of arguments number after which the compiler cannot keep up
-let threshold = 16
+let threshold: Int = (Process.arguments.count >= 2) ? Int(Process.arguments[1])! : 16
+
 let compileTimeIssueComment = "Compile time become exponential past this point"
 
 let outputPath = "Source/Curry.swift"
