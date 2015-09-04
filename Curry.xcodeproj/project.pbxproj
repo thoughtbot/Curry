@@ -138,6 +138,7 @@
 		F886304D1B4EF96200F53969 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = thoughtbot;
 				TargetAttributes = {
@@ -392,6 +393,7 @@
 				F886306E1B4EF96200F53969 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F88630901B4EF9F800F53969 /* Build configuration list for PBXNativeTarget "Curry-Mac" */ = {
 			isa = XCConfigurationList;
@@ -400,6 +402,7 @@
 				F88630921B4EF9F800F53969 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
