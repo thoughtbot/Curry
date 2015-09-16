@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		804D01FB1BA3687E0005BBC4 /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88630991B4EFD7600F53969 /* Curry.swift */; settings = {ASSET_TAGS = (); }; };
+		804D01FB1BA3687E0005BBC4 /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88630991B4EFD7600F53969 /* Curry.swift */; };
 		804D01FC1BA368820005BBC4 /* Curry.h in Headers */ = {isa = PBXBuildFile; fileRef = F88630741B4EF9B200F53969 /* Curry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80E0590F1BA9FAC10077CBA7 /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88630991B4EFD7600F53969 /* Curry.swift */; };
+		80E059101BA9FAC50077CBA7 /* Curry.h in Headers */ = {isa = PBXBuildFile; fileRef = F88630741B4EF9B200F53969 /* Curry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F88630761B4EF9B200F53969 /* Curry.h in Headers */ = {isa = PBXBuildFile; fileRef = F88630741B4EF9B200F53969 /* Curry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F88630961B4EFA2700F53969 /* Curry.h in Headers */ = {isa = PBXBuildFile; fileRef = F88630741B4EF9B200F53969 /* Curry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F886309A1B4EFD7600F53969 /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88630991B4EFD7600F53969 /* Curry.swift */; };
@@ -17,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		804D01F31BA3684C0005BBC4 /* Curry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Curry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80E059071BA9FA7F0077CBA7 /* Curry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Curry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F88630561B4EF96200F53969 /* Curry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Curry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F88630741B4EF9B200F53969 /* Curry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Curry.h; sourceTree = "<group>"; };
 		F88630751B4EF9B200F53969 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -26,6 +29,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		804D01EF1BA3684C0005BBC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80E059031BA9FA7F0077CBA7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -63,6 +73,7 @@
 				F88630561B4EF96200F53969 /* Curry.framework */,
 				F886307D1B4EF9F800F53969 /* Curry.framework */,
 				804D01F31BA3684C0005BBC4 /* Curry.framework */,
+				80E059071BA9FA7F0077CBA7 /* Curry.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,6 +104,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				804D01FC1BA368820005BBC4 /* Curry.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80E059041BA9FA7F0077CBA7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80E059101BA9FAC50077CBA7 /* Curry.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +150,24 @@
 			name = "Curry-watchOS";
 			productName = "Curry-watchOS";
 			productReference = 804D01F31BA3684C0005BBC4 /* Curry.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		80E059061BA9FA7F0077CBA7 /* Curry-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80E0590E1BA9FA7F0077CBA7 /* Build configuration list for PBXNativeTarget "Curry-tvOS" */;
+			buildPhases = (
+				80E059021BA9FA7F0077CBA7 /* Sources */,
+				80E059031BA9FA7F0077CBA7 /* Frameworks */,
+				80E059041BA9FA7F0077CBA7 /* Headers */,
+				80E059051BA9FA7F0077CBA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Curry-tvOS";
+			productName = "Curry-tvOS";
+			productReference = 80E059071BA9FA7F0077CBA7 /* Curry.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F88630551B4EF96200F53969 /* Curry-iOS */ = {
@@ -182,6 +219,9 @@
 					804D01F21BA3684C0005BBC4 = {
 						CreatedOnToolsVersion = 7.0;
 					};
+					80E059061BA9FA7F0077CBA7 = {
+						CreatedOnToolsVersion = 7.1;
+					};
 					F88630551B4EF96200F53969 = {
 						CreatedOnToolsVersion = 6.4;
 					};
@@ -205,12 +245,20 @@
 				F88630551B4EF96200F53969 /* Curry-iOS */,
 				F886307C1B4EF9F800F53969 /* Curry-Mac */,
 				804D01F21BA3684C0005BBC4 /* Curry-watchOS */,
+				80E059061BA9FA7F0077CBA7 /* Curry-tvOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		804D01F11BA3684C0005BBC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80E059051BA9FA7F0077CBA7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -239,6 +287,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				804D01FB1BA3687E0005BBC4 /* Curry.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80E059021BA9FA7F0077CBA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80E0590F1BA9FAC10077CBA7 /* Curry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +354,46 @@
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		80E0590C1BA9FA7F0077CBA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = Source/Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = Curry;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		80E0590D1BA9FA7F0077CBA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Source/Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = Curry;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -478,6 +574,15 @@
 			buildConfigurations = (
 				804D01F81BA3684C0005BBC4 /* Debug */,
 				804D01F91BA3684C0005BBC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80E0590E1BA9FA7F0077CBA7 /* Build configuration list for PBXNativeTarget "Curry-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80E0590C1BA9FA7F0077CBA7 /* Debug */,
+				80E0590D1BA9FA7F0077CBA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
