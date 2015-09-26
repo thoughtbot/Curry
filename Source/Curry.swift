@@ -58,7 +58,7 @@ public func curry<A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P>(function: (A, 
     return { a in { b in { c in { d in { e in { f in { g in { h in { i in { j in { k in { l in { m in { n in { o in function(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o) } } } } } } } } } } } } } } }
 }
 
-// Compile times become exponential past this point
+// Compile time become exponential past this point
 
 //public func curry<A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q>(function: (A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P) -> Q) -> A -> B -> C -> D -> E -> F -> G -> H -> I -> J -> K -> L -> M -> N -> O -> P -> Q {
 //    return { a in { b in { c in { d in { e in { f in { g in { h in { i in { j in { k in { l in { m in { n in { o in { p in function(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p) } } } } } } } } } } } } } } } }
