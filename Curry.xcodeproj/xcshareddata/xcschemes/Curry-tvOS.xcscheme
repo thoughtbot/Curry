@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F88630551B4EF96200F53969"
+               BlueprintIdentifier = "80E059061BA9FA7F0077CBA7"
                BuildableName = "Curry.framework"
-               BlueprintName = "Curry-iOS"
+               BlueprintName = "Curry-tvOS"
                ReferencedContainer = "container:Curry.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F88630551B4EF96200F53969"
+            BlueprintIdentifier = "80E059061BA9FA7F0077CBA7"
             BuildableName = "Curry.framework"
-            BlueprintName = "Curry-iOS"
+            BlueprintName = "Curry-tvOS"
             ReferencedContainer = "container:Curry.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F88630551B4EF96200F53969"
+            BlueprintIdentifier = "80E059061BA9FA7F0077CBA7"
             BuildableName = "Curry.framework"
-            BlueprintName = "Curry-iOS"
+            BlueprintName = "Curry-tvOS"
             ReferencedContainer = "container:Curry.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
