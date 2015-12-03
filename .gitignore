@@ -30,8 +30,10 @@ Pods
 # Carthage
 Carthage/Build
 
+# Swift Package Manager
+.build
+Packages
+
 # AppCode specific files
 .idea/
 *.iml
-
-Argo.framework.zip
