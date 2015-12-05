@@ -63,7 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				F88630731B4EF9B200F53969 /* Resources */,
-				F88630721B4EF9B200F53969 /* Sources */,
+				F88630721B4EF9B200F53969 /* Source */,
 				F88630571B4EF96200F53969 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,12 +79,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F88630721B4EF9B200F53969 /* Sources */ = {
+		F88630721B4EF9B200F53969 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				F88630991B4EFD7600F53969 /* Curry.swift */,
 			);
-			path = Sources;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		F88630731B4EF9B200F53969 /* Resources */ = {
