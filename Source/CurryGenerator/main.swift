@@ -2,6 +2,14 @@
 
 import Foundation
 
+#if os(Linux)
+extension NSURL {
+  func URLByAppendingPathComponent(string: String) -> NSURL {
+    return self.URLByAppendingPathComponent(string)!
+  }
+}
+#endif
+
 let generics = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
 let genericsGenerator: Int -> String = { x in
@@ -33,11 +41,11 @@ let start = 2
 let knownLimitOfGenericParameters = 64
 let curries = (start..<knownLimitOfGenericParameters).map { curryGenerator(arguments: $0) }
 
-let output = curries.joinWithSeparator("\n\n") + "\n"
+let output = NSString(string: curries.joinWithSeparator("\n\n") + "\n")
 
 let outputPath = "Source/Curry.swift"
 let currentPath = NSURL(fileURLWithPath: NSFileManager.defaultManager().currentDirectoryPath)
-let currySwiftPath = currentPath.URLByAppendingPathComponent(outputPath)
+let currySwiftPath: NSURL = currentPath.URLByAppendingPathComponent(outputPath)
 
 do {
   try output.writeToURL(currySwiftPath, atomically: true, encoding: NSUTF8StringEncoding)
