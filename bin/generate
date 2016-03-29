@@ -39,8 +39,8 @@ func curryDefinitionGenerator(arguments arguments: Int) -> String {
   let functionDefinition = "function(\(innerFunctionArguments))" // return function(`a`, `b`)
 
   let implementation = lowerFunctionArguments.reverse().reduce(functionDefinition) {
-    "{ \($1) in \($0) }"
-  } // "{ `a` in { `b` in function(`a`, `b`) } }"
+    "{ (\($1): \($1.uppercaseString)) in \($0) }"
+  } // "{ (`a`: `A`) in { (`b`: `B`) in function(`a`, `b`) } }"
 
   let curry = [
     "public func curry\(genericTypeDefinition)(function: \(functionArguments) -> \(returnType)) -> \(returnFunctionArguments) -> \(returnType) {",
