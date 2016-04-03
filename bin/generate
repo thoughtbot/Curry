@@ -40,8 +40,8 @@ func curryDefinitionGenerator(arguments arguments: Int) -> String {
 
   let implementation = lowerFunctionArguments.enumerate().reverse().reduce(functionDefinition) { accum, tuple in
     let (index, argument) = tuple
-    return "{ (\(argument): \(inputParameters[index])) in \(accum) }"
-  } // "{ (`a`: A) in { (`b`: B) in function(`a`, `b`) } }"
+    return "{ (\(argument): \(inputParameters[index])) -> \(genericParameters.suffixFrom(index + 1).joinWithSeparator(" -> ")) in \(accum) }"
+  } // "{ (`a`: A) -> B -> C in { (`b`: B) -> C in function(`a`, `b`) } }"
 
   let curry = [
     "public func curry\(genericTypeDefinition)(function: \(functionArguments) -> \(returnType)) -> \(returnFunctionArguments) -> \(returnType) {",
