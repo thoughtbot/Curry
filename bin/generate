@@ -58,7 +58,7 @@ let input = Process.arguments[safe: 1] ?? "20"
 let limit = Int(input)!
 
 let start = 2
-let curries = (start..<limit).map { curryDefinitionGenerator(arguments: $0) }
+let curries = (start...limit+1).map { curryDefinitionGenerator(arguments: $0) }
 
 let output = curries.joinWithSeparator("\n\n") + "\n"
 
