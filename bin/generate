@@ -43,7 +43,7 @@ func curryDefinitionGenerator(arguments: Int) -> String {
   let returnFunction = singleParameterFunctions(genericParameters) // " (A) -> (B) -> (C) -> D"
   let innerFunctionArguments = commaConcat(lowerFunctionArguments) // "`a`, `b`, `c`"
 
-  let functionDefinition = "function(\(innerFunctionArguments))" // return function(`a`, `b`, `c`)
+  let functionDefinition = "function(\(innerFunctionArguments))" // function(`a`, `b`, `c`)
 
   let implementation = lowerFunctionArguments.enumerated().reversed().reduce(functionDefinition) { accum, tuple in
     let (index, argument) = tuple
