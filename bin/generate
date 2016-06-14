@@ -52,7 +52,7 @@ func curryDefinitionGenerator(arguments: Int) -> String {
   } // "{ (`a`: A) -> (B) -> (C) -> D in { (`b`: B) -> (C) -> D in { (`c`: C) -> D in function(`a`, `b`, `c`) } } }"
 
   let curry = [
-    "public func curry\(genericTypeDefinition)(function: \(functionArguments) -> \(returnType)) -> \(returnFunction) {",
+    "public func curry\(genericTypeDefinition)(_ function: \(functionArguments) -> \(returnType)) -> \(returnFunction) {",
     "    return \(implementation)",
     "}"
   ]
