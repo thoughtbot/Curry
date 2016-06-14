@@ -8,7 +8,7 @@ let generics = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
 
 extension Array {
   subscript(safe index: Int) -> Element? {
-    return indices ~= index ? self[index] : .None
+    return indices ~= index ? self[index] : .none
   }
 }
 
@@ -20,27 +20,27 @@ func genericTypeForPosition(x: Int) -> String {
   }
 }
 
-func commaConcat(xs: [String]) -> String {
-  return xs.joinWithSeparator(", ")
+func commaConcat(_ xs: [String]) -> String {
+  return xs.joined(separator: ", ")
 }
 
-func curryDefinitionGenerator(arguments arguments: Int) -> String {
+func curryDefinitionGenerator(arguments: Int) -> String {
   let genericParameters = (0..<arguments).map(genericTypeForPosition) // ["A", "B", "C"]
   let genericTypeDefinition = "<\(commaConcat(genericParameters))>" // "<A, B, C>"
 
   let inputParameters = Array(genericParameters[0..<arguments - 1]) // ["A", "B"]
-  let lowerFunctionArguments = inputParameters.map { "`\($0.lowercaseString)`" } // ["`a`", "`b`"]
+  let lowerFunctionArguments = inputParameters.map { "`\($0.lowercased())`" } // ["`a`", "`b`"]
   let returnType = genericParameters.last! // "C"
 
   let functionArguments = "(\(commaConcat(inputParameters)))" // "(A, B)"
-  let returnFunctionArguments = inputParameters.joinWithSeparator(" -> ") // " A -> B"
+  let returnFunctionArguments = inputParameters.joined(separator: " -> ") // " A -> B"
   let innerFunctionArguments = commaConcat(lowerFunctionArguments) // "`a`, `b`"
 
   let functionDefinition = "function(\(innerFunctionArguments))" // return function(`a`, `b`)
 
-  let implementation = lowerFunctionArguments.enumerate().reverse().reduce(functionDefinition) { accum, tuple in
+  let implementation = lowerFunctionArguments.enumerated().reversed().reduce(functionDefinition) { accum, tuple in
     let (index, argument) = tuple
-    return "{ (\(argument): \(inputParameters[index])) -> \(genericParameters.suffixFrom(index + 1).joinWithSeparator(" -> ")) in \(accum) }"
+    return "{ (\(argument): \(inputParameters[index])) -> \(genericParameters.suffix(from: index + 1).joined(separator: " -> ")) in \(accum) }"
   } // "{ (`a`: A) -> B -> C in { (`b`: B) -> C in function(`a`, `b`) } }"
 
   let curry = [
@@ -49,7 +49,7 @@ func curryDefinitionGenerator(arguments arguments: Int) -> String {
     "}"
   ]
 
-  return curry.joinWithSeparator("\n")
+  return curry.joined(separator: "\n")
 }
 
 print("Generating 💬")
@@ -60,14 +60,14 @@ let limit = Int(input)!
 let start = 2
 let curries = (start...limit+1).map { curryDefinitionGenerator(arguments: $0) }
 
-let output = curries.joinWithSeparator("\n\n") + "\n"
+let output = curries.joined(separator: "\n\n") + "\n"
 
 let outputPath = "Source/Curry.swift"
-let currentPath = NSURL(fileURLWithPath: NSFileManager.defaultManager().currentDirectoryPath)
-let currySwiftPath = currentPath.URLByAppendingPathComponent(outputPath)
+let currentPath = NSURL(fileURLWithPath: FileManager.default().currentDirectoryPath)
+let currySwiftPath = currentPath.appendingPathComponent(outputPath)!
 
 do {
-  try output.writeToURL(currySwiftPath, atomically: true, encoding: NSUTF8StringEncoding)
+  try output.write(to: currySwiftPath, atomically: true, encoding: String.Encoding.utf8)
 } catch let e as NSError {
   print("An error occurred while saving the generated functions. Error: \(e)")
 }
