@@ -24,27 +24,35 @@ func commaConcat(_ xs: [String]) -> String {
   return xs.joined(separator: ", ")
 }
 
+func singleParameterFunctions(_ xs: [String]) -> String {
+  guard let first = xs.first else { fatalError("Attempted to nest functions with no arguments") }
+  guard xs.last != first else { return first }
+  let remainder = Array(xs.dropFirst())
+  return "(\(first)) -> \(singleParameterFunctions(remainder))"
+}
+
 func curryDefinitionGenerator(arguments: Int) -> String {
-  let genericTypeDefinition = "<\(commaConcat(genericParameters))>" // "<A, B, C>"
-  let genericParameters = (0..<arguments).map(genericType) // ["A", "B", "C"]
+  let genericParameters = (0..<arguments).map(genericType) // ["A", "B", "C", "D"]
+  let genericTypeDefinition = "<\(commaConcat(genericParameters))>" // "<A, B, C, D>"
 
-  let inputParameters = Array(genericParameters[0..<arguments - 1]) // ["A", "B"]
-  let lowerFunctionArguments = inputParameters.map { "`\($0.lowercased())`" } // ["`a`", "`b`"]
-  let returnType = genericParameters.last! // "C"
+  let inputParameters = Array(genericParameters[0..<arguments - 1]) // ["A", "B", "C"]
+  let lowerFunctionArguments = inputParameters.map { "`\($0.lowercased())`" } // ["`a`", "`b`", "`c`"]
+  let returnType = genericParameters.last! // "D"
 
-  let functionArguments = "(\(commaConcat(inputParameters)))" // "(A, B)"
-  let returnFunctionArguments = inputParameters.joined(separator: " -> ") // " A -> B"
-  let innerFunctionArguments = commaConcat(lowerFunctionArguments) // "`a`, `b`"
+  let functionArguments = "(\(commaConcat(inputParameters)))" // "(A, B, C)"
+  let returnFunction = singleParameterFunctions(genericParameters) // " (A) -> (B) -> (C) -> D"
+  let innerFunctionArguments = commaConcat(lowerFunctionArguments) // "`a`, `b`, `c`"
 
-  let functionDefinition = "function(\(innerFunctionArguments))" // return function(`a`, `b`)
+  let functionDefinition = "function(\(innerFunctionArguments))" // return function(`a`, `b`, `c`)
 
   let implementation = lowerFunctionArguments.enumerated().reversed().reduce(functionDefinition) { accum, tuple in
     let (index, argument) = tuple
-    return "{ (\(argument): \(inputParameters[index])) -> \(genericParameters.suffix(from: index + 1).joined(separator: " -> ")) in \(accum) }"
-  } // "{ (`a`: A) -> B -> C in { (`b`: B) -> C in function(`a`, `b`) } }"
+    let functionParameters = Array(genericParameters.suffix(from: index + 1))
+    return "{ (\(argument): \(inputParameters[index])) -> \(singleParameterFunctions(functionParameters)) in \(accum) }"
+  } // "{ (`a`: A) -> (B) -> (C) -> D in { (`b`: B) -> (C) -> D in { (`c`: C) -> D in function(`a`, `b`, `c`) } } }"
 
   let curry = [
-    "public func curry\(genericTypeDefinition)(function: \(functionArguments) -> \(returnType)) -> \(returnFunctionArguments) -> \(returnType) {",
+    "public func curry\(genericTypeDefinition)(function: \(functionArguments) -> \(returnType)) -> \(returnFunction) {",
     "    return \(implementation)",
     "}"
   ]
