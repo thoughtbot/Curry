@@ -12,11 +12,11 @@ extension Array {
   }
 }
 
-func genericTypeForPosition(x: Int) -> String {
+func genericType(for position: Int) -> String {
   let max = generics.count
-  switch x {
-  case _ where x < max: return generics[x % max]
-  default: return generics[x / max - 1] + generics[x % max]
+  switch position {
+  case _ where position < max: return generics[position % max]
+  default: return generics[position / max - 1] + generics[position % max]
   }
 }
 
@@ -25,8 +25,8 @@ func commaConcat(_ xs: [String]) -> String {
 }
 
 func curryDefinitionGenerator(arguments: Int) -> String {
-  let genericParameters = (0..<arguments).map(genericTypeForPosition) // ["A", "B", "C"]
   let genericTypeDefinition = "<\(commaConcat(genericParameters))>" // "<A, B, C>"
+  let genericParameters = (0..<arguments).map(genericType) // ["A", "B", "C"]
 
   let inputParameters = Array(genericParameters[0..<arguments - 1]) // ["A", "B"]
   let lowerFunctionArguments = inputParameters.map { "`\($0.lowercased())`" } // ["`a`", "`b`"]
