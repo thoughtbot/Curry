@@ -18,7 +18,7 @@ Here is the current Swift compatibility breakdown:
 
 | Swift Version | Curry Version |
 | ------------- | ------------- |
-| 3.X           | 3.X           |
+| 3.X           | master        |
 | 2.2, 2.3      | 2.X           |
 
 ## Installation ##
