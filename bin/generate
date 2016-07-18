@@ -36,20 +36,20 @@ func curryDefinitionGenerator(arguments: Int) -> String {
   let genericTypeDefinition = "<\(commaConcat(genericParameters))>" // "<A, B, C, D>"
 
   let inputParameters = Array(genericParameters[0..<arguments - 1]) // ["A", "B", "C"]
-  let lowerFunctionArguments = inputParameters.map { "`\($0.lowercased())`" } // ["`a`", "`b`", "`c`"]
+  let lowerFunctionArguments = inputParameters.map { "\($0.lowercased())" } // ["a", "b", "c"]
   let returnType = genericParameters.last! // "D"
 
   let functionArguments = "(\(commaConcat(inputParameters)))" // "(A, B, C)"
   let returnFunction = singleParameterFunctions(genericParameters) // " (A) -> (B) -> (C) -> D"
-  let innerFunctionArguments = commaConcat(lowerFunctionArguments) // "`a`, `b`, `c`"
+  let innerFunctionArguments = commaConcat(lowerFunctionArguments) // "a, b, c"
 
-  let functionDefinition = "function(\(innerFunctionArguments))" // function(`a`, `b`, `c`)
+  let functionDefinition = "function(\(innerFunctionArguments))" // function(a, b, c)
 
   let implementation = lowerFunctionArguments.enumerated().reversed().reduce(functionDefinition) { accum, tuple in
     let (index, argument) = tuple
     let functionParameters = Array(genericParameters.suffix(from: index + 1))
     return "{ (\(argument): \(inputParameters[index])) -> \(singleParameterFunctions(functionParameters)) in \(accum) }"
-  } // "{ (`a`: A) -> (B) -> (C) -> D in { (`b`: B) -> (C) -> D in { (`c`: C) -> D in function(`a`, `b`, `c`) } } }"
+  } // "{ (a: A) -> (B) -> (C) -> D in { (b: B) -> (C) -> D in { (c: C) -> D in function(a, b, c) } } }"
 
   let curry = [
     "public func curry\(genericTypeDefinition)(_ function: \(functionArguments) -> \(returnType)) -> \(returnFunction) {",
