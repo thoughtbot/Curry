@@ -218,15 +218,19 @@
 				TargetAttributes = {
 					804D01F21BA3684C0005BBC4 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 					};
 					80E059061BA9FA7F0077CBA7 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 					};
 					F88630551B4EF96200F53969 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 					};
 					F886307C1B4EF9F800F53969 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
