@@ -62,7 +62,7 @@ func curryDefinitionGenerator(arguments: Int) -> String {
 
 print("Generating 💬")
 
-let input = Process.arguments[safe: 1] ?? "20"
+let input = CommandLine.arguments[safe: 1] ?? "20"
 let limit = Int(input)!
 
 let start = 2
@@ -72,7 +72,7 @@ let output = curries.joined(separator: "\n\n") + "\n"
 
 let outputPath = "Source/Curry.swift"
 let currentPath = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-let currySwiftPath = try! currentPath.appendingPathComponent(outputPath)
+let currySwiftPath = currentPath.appendingPathComponent(outputPath)
 do {
   try output.write(to: currySwiftPath, atomically: true, encoding: String.Encoding.utf8)
   print("Done, curry functions files written at \(outputPath) 👍")
