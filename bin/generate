@@ -52,7 +52,7 @@ func curryDefinitionGenerator(arguments: Int) -> String {
   } // "{ (a: A) -> (B) -> (C) -> D in { (b: B) -> (C) -> D in { (c: C) -> D in function(a, b, c) } } }"
 
   let curry = [
-    "public func curry\(genericTypeDefinition)(_ function: \(functionArguments) -> \(returnType)) -> \(returnFunction) {",
+    "public func curry\(genericTypeDefinition)(_ function: @escaping \(functionArguments) -> \(returnType)) -> \(returnFunction) {",
     "    return \(implementation)",
     "}"
   ]
@@ -73,11 +73,9 @@ let output = curries.joined(separator: "\n\n") + "\n"
 let outputPath = "Source/Curry.swift"
 let currentPath = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
 let currySwiftPath = try! currentPath.appendingPathComponent(outputPath)
-
 do {
   try output.write(to: currySwiftPath, atomically: true, encoding: String.Encoding.utf8)
+  print("Done, curry functions files written at \(outputPath) 👍")
 } catch let e as NSError {
   print("An error occurred while saving the generated functions. Error: \(e)")
 }
-
-print("Done, curry functions files written at \(outputPath) 👍")
