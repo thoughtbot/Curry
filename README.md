@@ -84,6 +84,6 @@ thoughtbot are trademarks of thoughtbot, inc.
 
 We love open source software! See [our other projects](https://thoughtbot.com/tools) or [see some case studies][case studies]. We also have [iOS learning resources at Upcase by thoughtbot](https://thoughtbot.com/upcase/ios).
 
-[community]: https://thoughtbot.com/community?utm_source=github
+[community]: ttps://thoughtbot.com/tools
 [case studies]: https://thoughtbot.com/ios
 [hire]: https://thoughtbot.com/hire-us?utm_source=github
