@@ -82,9 +82,8 @@ About
 Curry is maintained and funded by thoughtbot, inc. The names and logos for
 thoughtbot are trademarks of thoughtbot, inc.
 
-We love open source software! See [our other projects][community] or look at
-our product [case studies] and [hire us][hire] to help build your iOS app.
+We love open source software! See [our other projects](https://thoughtbot.com/tools) or [see some case studies][case studies]. We also have [iOS learning resources at Upcase by thoughtbot](https://thoughtbot.com/upcase/ios).
 
 [community]: https://thoughtbot.com/community?utm_source=github
-[case studies]: https://thoughtbot.com/ios?utm_source=github
+[case studies]: https://thoughtbot.com/ios
 [hire]: https://thoughtbot.com/hire-us?utm_source=github
