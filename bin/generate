@@ -24,6 +24,10 @@ func commaConcat(_ xs: [String]) -> String {
   return xs.joined(separator: ", ")
 }
 
+func extraParentheses(_ string: String, when condition: Bool) -> String {
+  return condition ? "(\(string))" : string
+}
+
 func singleParameterFunctions(_ xs: [String]) -> String {
   guard let first = xs.first else { fatalError("Attempted to nest functions with no arguments") }
   guard xs.last != first else { return first }
@@ -39,11 +43,11 @@ func curryDefinitionGenerator(arguments: Int) -> String {
   let lowerFunctionArguments = inputParameters.map { "\($0.lowercased())" } // ["a", "b", "c"]
   let returnType = genericParameters.last! // "D"
 
-  let functionArguments = "(\(commaConcat(inputParameters)))" // "(A, B, C)"
+  let functionArguments = extraParentheses("(\(commaConcat(inputParameters)))", when: inputParameters.count > 1) // "(A, B, C)"
   let returnFunction = singleParameterFunctions(genericParameters) // " (A) -> (B) -> (C) -> D"
   let innerFunctionArguments = commaConcat(lowerFunctionArguments) // "a, b, c"
 
-  let functionDefinition = "function(\(innerFunctionArguments))" // function(a, b, c)
+  let functionDefinition = "function(\(extraParentheses(innerFunctionArguments, when: lowerFunctionArguments.count > 1)))" // function(a, b, c)
 
   let implementation = lowerFunctionArguments.enumerated().reversed().reduce(functionDefinition) { accum, tuple in
     let (index, argument) = tuple
