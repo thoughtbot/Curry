@@ -71,7 +71,7 @@ let curries = (start...limit+1).map { curryDefinitionGenerator(arguments: $0) }
 let output = curries.joined(separator: "\n\n") + "\n"
 
 let outputPath = "Source/Curry.swift"
-let parentPath = URL(fileURLWithPath: FileManager.default.currentDirectoryPath).deletingLastPathComponent()
+let parentPath = URL(fileURLWithPath: FileManager.default.currentDirectoryPath + "/" + #file).deletingLastPathComponent().deletingLastPathComponent()
 let currySwiftPath = parentPath.appendingPathComponent(outputPath)
 do {
   try output.write(to: currySwiftPath, atomically: true, encoding: String.Encoding.utf8)
