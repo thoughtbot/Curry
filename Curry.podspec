@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'Curry'
-  spec.version = '4.0.1'
+  spec.version = '4.0.2'
   spec.summary = 'Function Currying for Swift'
   spec.homepage = 'https://github.com/thoughtbot/curry'
   spec.license = { :type => 'MIT', :file => 'LICENSE' }
