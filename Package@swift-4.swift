@@ -6,5 +6,5 @@ let package = Package(
   name: "Curry",
   products: [.library(name: "Curry", targets: ["Curry"])],
   dependencies: [],
-  targets: [.target(name: "Curry", dependencies: [], path: ".")]
+  targets: [.target(name: "Curry", dependencies: [], path: "Source")]
 )
