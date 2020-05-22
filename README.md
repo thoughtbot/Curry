@@ -16,14 +16,6 @@ and instead using [one of the releases we've provided][releases].
 
 [releases]: https://github.com/thoughtbot/Curry/releases
 
-Here is the current Swift compatibility breakdown:
-
-| Swift Version | Curry Version |
-| ------------- | ------------- |
-| 4.X           | 4.X           |
-| 3.X           | 3.X           |
-| 2.2, 2.3      | 2.X           |
-
 ## Installation ##
 
 ### [Carthage] ###
