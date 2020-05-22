@@ -12,6 +12,7 @@ Pod::Spec.new do |spec|
   spec.source = { :git => 'https://github.com/thoughtbot/curry.git', :tag => "v#{spec.version}" }
   spec.source_files = 'Source/**/*.{h,swift}'
   spec.requires_arc = true
+  spec.swift_versions = [3.0, 4.0, 5.0]
   spec.ios.deployment_target = '8.0'
   spec.osx.deployment_target = '10.9'
   spec.watchos.deployment_target = '2.0'
