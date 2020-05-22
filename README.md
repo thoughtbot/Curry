@@ -18,6 +18,24 @@ and instead using [one of the releases we've provided][releases].
 
 ## Installation ##
 
+### [Swift Package Manager] ###
+
+[Swift Package Manager]: https://swift.org/package-manager/
+
+Add this as a package dependency in Xcode:
+
+```
+https://github.com/thoughtbot/Curry
+```
+
+Or add it as a dependency in your Package.swift file:
+
+```swift
+dependencies: [
+  .package(url: "https://github.com/thoughtbot/Curry", from: "5.0.0"),
+]
+```
+
 ### [Carthage] ###
 
 [Carthage]: https://github.com/Carthage/Carthage
