@@ -8,14 +8,6 @@ post][tb-curry]
 
 [tb-curry]: https://robots.thoughtbot.com/introduction-to-function-currying-in-swift
 
-## Version Compatibility
-
-Note that we're aggressive about pushing `master` forward along with new
-versions of Swift. Therefore, we highly recommend against pointing at `master`,
-and instead using [one of the releases we've provided][releases].
-
-[releases]: https://github.com/thoughtbot/Curry/releases
-
 ## Installation ##
 
 ### [Swift Package Manager] ###
