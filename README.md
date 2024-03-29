@@ -85,17 +85,5 @@ redistributed under the terms specified in the [LICENSE] file.
 
 [LICENSE]: /LICENSE
 
-About
------
-
-![thoughtbot](https://thoughtbot.com/logo.png)
-
-Curry is maintained and funded by thoughtbot, inc. The names and logos for
-thoughtbot are trademarks of thoughtbot, inc.
-
-We love open source software! See [our other projects][tools] or look at
-our product [case studies] and [hire us][hire] to help build your iOS app. We also have a collection of resources for [learning iOS development](https://thoughtbot.com/upcase/ios) at Upcase. 
-
-[tools]: https://thoughtbot.com/tools
-[case studies]: https://thoughtbot.com/ios?utm_source=github
-[hire]: https://thoughtbot.com/hire-us?utm_source=github
+<!-- START /templates/footer.md -->
+<!-- END /templates/footer.md -->
